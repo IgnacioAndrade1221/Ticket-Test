@@ -1,0 +1,26 @@
+.titulo{
+    font: 1em sans-serif;
+    font-size: 45px;
+}
+
+.subtitulo{
+    font: 1em sans-serif;
+    font-size: 25px;
+}
+
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+}
+
+.card {
+    padding: 20px;
+    width: 300px;
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1); 
+}
+
+
