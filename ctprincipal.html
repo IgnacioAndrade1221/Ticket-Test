@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Ticket</title>
+    <link rel="stylesheet" href="crear_ticket.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Volver</a></li>
+                <li><a href="#">Cerrar sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Crear Ticket</h1>
+    <form action="{% url 'crear_ticket' %}" method="POST">
+        {% csrf_token %}
+        <div>
+            <label>Titulo</label>
+            <input name="titulo"/>
+        </div>
+        <div>
+            <label>Categoria</label>
+            <select name="categoria">
+                {% for categoria in categorias %}
+                    <option value="{{ categoria.id_categoria }}">{{ categoria.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label>Nivel de urgencia</label>
+            <select name="nivel_urgencia">
+                {% for prioridad in sla %}
+                    <option value="{{ prioridad.id_prioridad}}"> {{ prioridad.nombre_SLA }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div>
+            <label>Mensaje</label>
+            <input name="mensaje"/>
+        </div>
+        <button>Crear Ticket</button>
+    </form>
+</body>
+</html>
