@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Ticket</title>
+    <link rel="stylesheet" href="ver_ticket.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#">Perfil</a></li>
+                <li><a href="{% url 'tickets' %}">Volver</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1>{{ ticket.titulo }}</h1>
+    <div class="container">
+        <div class="ticket-box">
+            {% for mensaje in mensajes %}
+            <h3>{{ mensaje.user.username }}</h3>
+            <img src="{{ mensaje.usuario.profilepic.url }}" width="50" onerror="this.onerror=null; this.src='{{ default_pfp }}';" alt="Foto de perfil"/>
+            <div class="mensaje">
+                {{ mensaje.mensaje }} 
+            </div>
+            <div class="fecha">
+                {{ mensaje.fecha }}
+            </div>
+            {% for foto in mensaje.foto_ticket_set.all %}
+            <img src="{{ foto.foto.url }}" width="150"> <!-- Foto opcional que manda el usuario -->
+            {% endfor %}
+            {% endfor %}
+
+        </div>
+    </div>
+    <form action="{% url 'ver_ticket' ticket.id_ticket %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Mensaje</h2>
+        <div>
+            <label>Mensaje</label>
+            <input name="mensaje" id="mensaje"/>
+        </div>
+        <div>
+            <label>Adjuntar fotos (puedes seleccionar múltiples):</label>
+            <input type="file" name="fotos" multiple accept="image/*">
+        </div>
+        <button>Enviar mensaje</button>
+    </form>
+
+    <!-- JavaScript -->
+    <script>
+        // Seleccionamos el textarea y ajustamos la altura automáticamente al escribir
+        const textarea = document.querySelector('#mensaje');
+    
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto'; // Resetea la altura
+            this.style.height = (this.scrollHeight) + 'px'; // Ajusta la altura al contenido
+        });
+    </script>
+</body>
+</html>

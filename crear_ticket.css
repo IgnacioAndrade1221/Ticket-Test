@@ -1,13 +1,8 @@
 /* Estilos generales para la navegación */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.7); /* Añadir fondo semi-transparente */
+    background-color: transparent; /* Fondo transparente */
     padding: 10px;
-    position: fixed; /* Fija la barra en la parte superior */
-    top: 0;
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    z-index: 10; /* Asegura que esté por encima de otros elementos */
-    display: flex;
-    justify-content: 0; /* Centra los elementos dentro del navbar */
+    text-align: center; /* Alineación centrada */
 }
 
 /* Estilos para la lista de navegación */
@@ -16,28 +11,27 @@
     margin: 0;
     padding: 0;
     display: flex; /* Hace la lista de ítems horizontal */
-    justify-content: center; /* Centra los elementos dentro de la lista */
+    justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Alineación vertical centrada */
-    gap: 20px; /* Espaciado entre los ítems de la lista */
 }
 
 /* Estilos para los ítems de la lista */
 .nav-list li {
-    margin: 0; /* Eliminamos el margen adicional */
+    margin: 0 15px; /* Espaciado entre los ítems */
 }
 
 /* Estilos para los enlaces */
 .nav-list a {
     text-decoration: none; /* Elimina el subrayado */
-    color: white; /* Cambiar a blanco para mejor visibilidad */
-    font-size: 18px;
+    color: black; /* Color de texto negro */
+    font-size: 18px; /* Tamaño de la fuente */
     padding: 8px 15px; /* Padding alrededor del texto */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave en hover */
 }
 
 /* Hover en los enlaces */
 .nav-list a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente al pasar el ratón */
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente al pasar el ratón */
     border-radius: 5px; /* Bordes redondeados en hover */
     color: orange; /* Cambia el color del texto en hover */
 }
@@ -53,94 +47,90 @@
     }
 }
 
-
-/*CSS PARA BODY*/
 * {
-    margin: 0;
-    box-sizing: border-box;
     font-family: monospace;
 }
 
-body {
+/* Contenedor principal centrado */
+.container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-size: cover;
-    background-color: black;
-    padding-top: 60px; /* Espacio para que el navbar no se superponga */
+    align-items: flex-start; /* Alinea el contenedor arriba */
+    height: 100vh; /* Altura del contenedor principal */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.glass-container {
-    width: 400px;
-    height: 500px;
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Caja centrada con sombra */
+.crear-box {
+    background-color: white;
+    padding: 40px;
     border-radius: 10px;
-    border: 1px solid #fff;
-}
-
-.glass-container::before {
-    content: '';
-    position: absolute;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    max-width: 600px;
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    z-index: -1;
-}
-
-.ticket-box {
-    max-width: 350px;
     margin: 0 auto;
-    text-align: center;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    transition: height 0.3s ease; /* Transición suave al cambiar la altura */
 }
 
-h2 {
-    color: #fff;
-    margin-top: 30px;
+/* Estilo para los formularios */
+form div {
+    margin-bottom: 15px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+/* Etiquetas y campos del formulario */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
 }
 
-input, select {
+input, select, textarea {
+    width: 100%;
     padding: 10px;
-    margin-top: 25px;
-    border: none;
-    border-radius: 10px;
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    font-size: 13px;
-}
-
-input::placeholder, select {
-    color: #fff;
-}
-
-input:focus, select:focus {
-    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button {
-    background: #fff;
-    color: black;
-    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 15px;
+    width: 100%;
+    font-size: 16px;
 }
 
 button:hover {
-    background: transparent;
-    color: white;
-    outline: 1px solid #fff;
+    background-color: #45a049;
+}
+
+h1 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 20px; /* Espacio entre el título y la tabla */
+    text-align: center;
+}
+
+/* Estilo del textarea con límite de tamaño vertical */
+textarea {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    resize: none; /* Evita el redimensionado manual */
+    max-height: 400px; /* Mantiene un límite de altura máxima si se quiere */
+    min-height: 100px; /* Altura mínima */
+    overflow-y: hidden; /* Oculta el scroll vertical */
+}
+
+/* Mantiene el header fijo y sin modificar la estructura */
+header {
+    flex-shrink: 0; /* Evita que el header se reduzca con el contenido */
 }

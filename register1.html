@@ -2,8 +2,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>S.A.S Login</title>
-  <link rel="stylesheet" type="text/css" href="login.css">
+  <title>S.A.S Register</title>
+  <link rel="stylesheet" type="text/css" href="register.css">
 </head>
 
 <body>
@@ -48,18 +48,48 @@
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Iniciar sesion</span>
+              <span class="padding-bottom--15">Registrarse</span>
               <form id="stripe-login">
+
                 <div class="field padding-bottom--24">
-                  <label for="email">Correo</label>
-                  <input type="email" name="email">
+                  <label for="email">Username</label>
+                  <input type="text" id="username" name="username" required placeholder="Username">
                 </div>
+
+
+                <div class="field padding-bottom--24">
+                    <label for="email">First Name</label>
+                    <input type="text" id="first_name" name="first_name" required placeholder="First Name">
+                  </div>
+
+                <div class="field padding-bottom--24">
+                    <label for="email">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" required placeholder="Last Name">
+                </div> 
+
+                <div class="field padding-bottom--24">
+                    <label for="email">Correo</label>
+                    <input type="email" id="email" name="email" required placeholder="Email Address">
+                </div>
+
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
                     <label for="password">Contraseña</label>
                   </div>
-                  <input type="password" name="password">
+                  <input type="password" id="password" name="password" required placeholder="Password">
                 </div>
+                <div class="field padding-bottom--24">
+                    <div class="grid--50-50">
+                      <label for="password">Repetir Contraseña</label>
+                    </div>
+                    <input type="password" id="confirm_password" name="confirm_password" required placeholder="Confirm Password">
+                  </div>
+
+                  <div class="field padding-bottom--24">
+                    <input type="file" id="profilepic" name="profilepic" accept="image/*">
+                </div>
+
+
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
@@ -69,7 +99,7 @@
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>¿No tienes una cuenta? <a href="register1.html" id="signup"">Registrate</a></span>
+            <span>¿Ya estas registrado <a href="login.html" id="login"">Login</a></span>
             <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
             </div>
           </div>

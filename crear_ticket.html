@@ -11,38 +11,61 @@
         <nav class="navbar">
             <ul class="nav-list">
                 <li><a href="#">Perfil</a></li>
-                <li><a href="#">Volver</a></li>
+                <li><a href="#">Crear Ticket</a></li>
                 <li><a href="#">Cerrar sesion</a></li>
             </ul>
         </nav>
     </header>
-    
-    <div class="glass-container">
-        <div class="ticket-box">
-            <h2>Crear Ticket</h2>
-            <form action="{% url 'crear_ticket' %}" method="POST">
+    <h1>Crear Ticket</h1>
+
+    <div class="container">
+        <div class="crear-box">
+            <form action="{% url 'crear_ticket' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input type="text" name="titulo" required placeholder="Titulo">
-                
-                <select name="categoria">
-                    <option value="" disabled selected>Categoria</option>
-                    {% for categoria in categorias %}
-                        <option value="{{ categoria.id_categoria }}">{{ categoria.nombre }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="nivel_urgencia">
-                    <option value="" disabled selected>Nivel de urgencia</option>
-                    {% for prioridad in sla %}
-                        <option value="{{ prioridad.id_prioridad }}">{{ prioridad.nombre_SLA }}</option>
-                    {% endfor %}
-                </select>
-
-                <input type="text" name="mensaje" required placeholder="Mensaje">
-
+                <div>
+                    <label>Titulo</label>
+                    <input name="titulo" required/>
+                </div>
+                <div>
+                    <label>Categoria</label>
+                    <select name="categoria" required>
+                        {% for categoria in categorias %}
+                            <option value="{{ categoria.id_categoria }}">{{ categoria.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label>Nivel de urgencia</label>
+                    <select name="nivel_urgencia" required>
+                        {% for prioridad in sla %}
+                            <option value="{{ prioridad.id_prioridad}}"> {{ prioridad.nombre_SLA }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+        
+                <div>
+                    <label>Mensaje</label>
+                    <!-- Asigna un ID al textarea -->
+                    <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea>
+                </div>
+                <div>
+                    <label>Adjuntar fotos (puedes seleccionar múltiples):</label>
+                    <input type="file" name="fotos" multiple accept="image/*">
+                </div>
                 <button type="submit">Crear Ticket</button>
             </form>
         </div>
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Seleccionamos el textarea y ajustamos la altura automáticamente al escribir
+        const textarea = document.querySelector('#mensaje');
+
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto'; // Resetea la altura
+            this.style.height = (this.scrollHeight) + 'px'; // Ajusta la altura al contenido
+        });
+    </script>
 </body>
 </html>
