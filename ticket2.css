@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Estilo del body */
+body {
+  display: flex;
+  min-height: 100vh;
+  background: rgb(255, 255, 255);
+}
+
+/* Navbar superior */
+.navbar1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #282a34;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.navbar1 .subtitulo {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.navbar1 .nav-list {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar1 .nav-list li {
+  list-style: none;
+}
+
+.navbar1 .nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Navbar lateral izquierdo fijo */
+.navbar2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #282a34;
+  padding-top: 80px; /* Ajustar para dejar espacio para el navbar superior */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 900;
+}
+
+.navbar2 ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.navbar2 li {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.navbar2 a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  padding: 10px;
+  width: 100%;
+}
+
+.navbar2 a:hover {
+  background-color: #444;
+}
+
+/* Contenedor principal */
+.container {
+  margin-top: 80px;
+  margin-left: 220px; /* Espacio para la navbar lateral */
+  padding: 20px;
+  width: calc(100% - 220px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+  min-height: calc(100vh - 80px);
+}
+
+.titulo-container {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #282a34;
+}
+
+/* Contenedor de las tarjetas */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Tarjetas (Cards) */
+.card {
+  position: relative;
+  min-width: 300px;
+  height: 400px;
+  margin: 20px;
+  transition: 0.5s;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.card .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #282a34;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card:hover .box {
+  transform: translateY(-10px);
+}
+
+.card .content h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.card .content h3, .card .content p, .card .content a {
+  color: #fff;
+  text-align: center;
+}
+
+.card .content a {
+  background: black;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  
+}
+.card .content a:hover {
+  background: #fff;
+  color: #000;
+}
