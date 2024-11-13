@@ -3,44 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TICKET</title>
-    <link rel="stylesheet" href="ticket.css">
-    <script src="java.js"></script>
+    <title>S.A.S Menu</title>
+    <link rel="stylesheet" href="ticket2.css">
 </head>
 <body>
+    <!-- Navbar superior -->
     <header>
-        <nav class="navbar">
+        <nav class="navbar1">
+            <h3 class="subtitulo">S.A.S</h3>
             <ul class="nav-list">
                 <li><a href="#">Perfil</a></li>
                 <li><a href="#">Crear Ticket</a></li>
-                <li><a href="#">Cerrar sesion</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
             </ul>
         </nav>
     </header>
-    
-    
-    <div class="content">
-        <h1>Mis Tickets</h1>
-    
-        <div class="table-container">
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Estado</th>
-                    <th>Acción</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Ayuda</td>
-                    <td>Nuevo</td>
-                    <td><a href="{% url 'ver_ticket' ticket.id_ticket %}">Ver Ticket</a></td>
-                </tr>
 
-            </table>
+    <!-- Navbar lateral fijo -->
+    <nav class="navbar2">
+        <ul>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Crear Ticket</a></li>
+            <li><a href="#">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h2 class="titulo-container">Lista de Tickets</h2>
+        <div class="cards">
+            <!-- Tarjetas (Cards) -->
+            <div class="card">
+                <div class="box">
+                    <div class="content">
+                        <h2>01</h2>
+                        <h3>Titulo 1</h3>
+                        <p>En proceso</p>
+                        <a href="#">Ir al ticket</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="box">
+                    <div class="content">
+                        <h2>02</h2>
+                        <h3>Titulo 2</h3>
+                        <p>En proceso</p>
+                        <a href="#">Ir al ticket</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="box">
+                    <div class="content">
+                        <h2>03</h2>
+                        <h3>Titulo 2</h3>
+                        <p>En proceso</p>
+                        <a href="#">Ir al ticket</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
-    
 </body>
 </html>

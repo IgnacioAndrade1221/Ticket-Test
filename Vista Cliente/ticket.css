@@ -1,138 +1,183 @@
-/* Estilos generales para la navegación */
-.navbar {
-    background-color: transparent; /* Fondo transparente */
-    padding: 10px;
-    text-align: center; /* Alineación centrada */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Estilos para la lista de navegación */
-.nav-list {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Hace la lista de ítems horizontal */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Alineación vertical centrada */
+/* Estilo del body */
+body {
+  display: flex;
+  min-height: 100vh;
+  background: rgb(255, 255, 255);
 }
 
-/* Estilos para los ítems de la lista */
-.nav-list li {
-    margin: 0 15px; /* Espaciado entre los ítems */
+/* Navbar superior */
+.navbar1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #282a34;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
 }
 
-/* Estilos para los enlaces */
-.nav-list a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: black; /* Color de texto negro */
-    font-size: 18px; /* Tamaño de la fuente */
-    padding: 8px 15px; /* Padding alrededor del texto */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave en hover */
+.navbar1 .subtitulo {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
-/* Hover en los enlaces */
-.nav-list a:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente al pasar el ratón */
-    border-radius: 5px; /* Bordes redondeados en hover */
-    color: orange; /* Cambia el color del texto en hover */
+.navbar1 .nav-list {
+  display: flex;
+  gap: 15px;
 }
 
-/* Estilos responsivos para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .nav-list {
-        flex-direction: column; /* Cambia la lista a vertical en pantallas pequeñas */
-    }
-
-    .nav-list li {
-        margin: 10px 0; /* Añade más espacio entre los ítems */
-    }
+.navbar1 .nav-list li {
+  list-style: none;
 }
 
-/*Style para TICKETS*/
-/* Estilos para centrar el h1 y la tabla */
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente el contenido */
-    margin-top: 50px; /* Espacio superior para que no quede pegado arriba */
+.navbar1 .nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-/* Estilo centrado para el h1 */
-h1 {
-    font-size: 40px;
-    color: #333;
-    margin-bottom: 20px; /* Espacio entre el título y la tabla */
-    text-align: center;
+/* Navbar lateral izquierdo fijo */
+.navbar2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #282a34;
+  padding-top: 80px; /* Ajustar para dejar espacio para el navbar superior */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 900;
 }
 
-/* Estilo general de la tabla */
-.table-container {
-    display: block; /* El contenedor se ajusta automáticamente al contenido */
-    width: 100%; /* Ocupará el 100% del contenedor padre */
-    max-width: 800px; /* Ancho máximo de la tabla */
-    padding: 20px;
+.navbar2 ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
 }
 
-table {
-    width: 100%; /* Ocupa todo el ancho disponible en su contenedor */
-    border-collapse: collapse; /* Elimina los espacios entre las celdas */
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease; /* Transición suave para el efecto de deslizamiento */
+.navbar2 li {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Estilo de las celdas de cabecera */
-th {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 12px;
-    text-align: left;
-    font-weight: bold;
-    font-size: 16px;
+.navbar2 a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  padding: 10px;
+  width: 100%;
 }
 
-/* Estilo de las celdas */
-td {
-    padding: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 14px;
-    color: #333;
+.navbar2 a:hover {
+  background-color: #444;
 }
 
-/* Estilo alterno para las filas */
-tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.05);
+/* Contenedor principal */
+.container {
+  margin-top: 80px;
+  margin-left: 220px; /* Espacio para la navbar lateral */
+  padding: 20px;
+  width: calc(100% - 220px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+  min-height: calc(100vh - 80px);
 }
 
-/* Efecto hover en las filas */
-tr:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+.titulo-container {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #282a34;
 }
 
-/* Responsividad */
-@media (max-width: 600px) {
-    .table-container {
-        padding: 0; /* Elimina el padding en pantallas pequeñas */
-    }
-    
-    table {
-        font-size: 12px;
-    }
-    
-    th, td {
-        padding: 8px;
-    }
+/* Contenedor de las tarjetas */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
-/* Ajuste para que la tabla comience más arriba y se expanda hacia abajo */
-.table-container {
-    position: relative;
-    min-height: 200px; /* Altura mínima para tablas pequeñas */
-    overflow-y: auto; /* Permite el desplazamiento cuando la tabla tiene muchas filas */
-    max-height: 500px; /* Máximo desplazamiento cuando hay muchas filas */
+/* Tarjetas (Cards) */
+.card {
+  position: relative;
+  min-width: 300px;
+  height: 400px;
+  margin: 20px;
+  transition: 0.5s;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
 }
 
-table {
-    position: relative;
-    top: 0; /* Asegura que la tabla no se desplace al agregar más filas */
+.card .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #282a34;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
 }
+
+.card:hover .box {
+  transform: translateY(-10px);
+}
+
+.card .content h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.card .content h3, .card .content p, .card .content a {
+  color: #fff;
+  text-align: center;
+}
+
+.card .content a {
+  background: black;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 20px; /* Coloca el enlace 20px arriba del fondo de la tarjeta */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card .content a:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+

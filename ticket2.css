@@ -1,183 +1,373 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
+*,
+*:before,
+*:after {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
-/* Estilo del body */
-body {
-  display: flex;
-  min-height: 100vh;
-  background: rgb(255, 255, 255);
+:after {
+  content: "";
 }
 
-/* Navbar superior */
-.navbar1 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #282a34;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1000;
-}
-
-.navbar1 .subtitulo {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.navbar1 .nav-list {
-  display: flex;
-  gap: 15px;
-}
-
-.navbar1 .nav-list li {
-  list-style: none;
-}
-
-.navbar1 .nav-list a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* Navbar lateral izquierdo fijo */
-.navbar2 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 100vh;
-  background-color: #282a34;
-  padding-top: 80px; /* Ajustar para dejar espacio para el navbar superior */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 900;
-}
-
-.navbar2 ul {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-.navbar2 li {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.navbar2 a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  display: block;
-  padding: 10px;
-  width: 100%;
-}
-
-.navbar2 a:hover {
-  background-color: #444;
-}
-
-/* Contenedor principal */
-.container {
-  margin-top: 80px;
-  margin-left: 220px; /* Espacio para la navbar lateral */
-  padding: 20px;
-  width: calc(100% - 220px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.8); /* Fondo transparente */
-  min-height: calc(100vh - 80px);
-}
-
-.titulo-container {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 20px;
-  color: #282a34;
-}
-
-/* Contenedor de las tarjetas */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-}
-
-/* Tarjetas (Cards) */
-.card {
+section {
   position: relative;
-  min-width: 300px;
-  height: 400px;
-  margin: 20px;
-  transition: 0.5s;
-  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
-    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
+  left: 100px;
 }
 
-.card .box {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  background: #282a34;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  transition: 0.5s;
+h1 {
+  margin: 80px 0 10px 0;
+  font-size: 52px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px #3c84cd, 2px 2px 0px #3c84cd, 3px 3px 0px #3c84cd,
+    4px 4px 0px #3c84cd;
 }
 
-.card:hover .box {
-  transform: translateY(-10px);
+h2 {
+  font-size: 24px;
 }
 
-.card .content h2 {
-  position: absolute;
-  top: -10px;
-  right: 30px;
-  font-size: 8rem;
-  color: rgba(255, 255, 255, 0.1);
+body {
+  padding: 100px 0;
+  background: rgb(255, 255, 255);
+  color: white;
+  max-width: 640px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
-.card .content h3, .card .content p, .card .content a {
-  color: #fff;
+nav {
+  float: left;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: transparent;
+  height: auto;
+}
+
+nav ul {
   text-align: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.card .content a {
-  background: black;
-  padding: 8px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+nav ul li {
+  position: relative;
+  width: 70px;
+  height: 88px; 
+  cursor: pointer;
+  background: #3c84cd;
+  text-transform: uppercase;
+  transition: all 0.4s ease-out;
+}
+nav ul li:after {
   position: absolute;
-  bottom: 20px; /* Coloca el enlace 20px arriba del fondo de la tarjeta */
+  background: white;
+  color: #3c84cd;
+  top: 0;
+  left: 70px;
+  width: 70px;
+  height: 100%;
+  opacity: 0.5;
+  transform: perspective(400px) rotateY(90deg);
+  transform-origin: 0 100%;
+  transition: all 0.4s ease-out;
+}
+
+nav ul li:nth-child(1):after {
+  content: "Home";
+  line-height: 88px;
+}
+nav ul li:nth-child(2):after {
+  content: "Perfil";
+  line-height: 88px;
+}
+nav ul li:nth-child(3):after {
+  content: "Crear";
+  line-height: 85px;
+}
+nav ul li:nth-child(4):after {
+  content: "Gmail";
+  line-height: 70px;
+}
+nav ul li:nth-child(5):after {
+  content: "Logout";
+  line-height: 70px;
+}
+
+nav ul li:hover {
+  transform: translateX(-70px);
+}
+
+nav ul li:hover:after {
+  opacity: 1;
+  transform: perspective(400px) rotateY(0deg) scale(1);
+}
+
+nav ul li > div {
+  display: inline-block;
+  padding: 25px 0;
+  background: transparent;
+}
+
+nav ul li div {
+  position: relative;
+}
+
+.roof {
+  width: 0;
+  height: 0;
+  top: 2px;
+  border-style: solid;
+  border-width: 0 21px 15px 21px;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+.roof-edge {
+  position: absolute;
+  z-index: 20;
+  left: -17px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 17px 12px 17px;
+  border-color: transparent transparent #3c84cd transparent;
+}
+/*white triangle over red triangle*/
+.roof-edge:after {
+  position: absolute;
+  left: -14.5px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14.5px 10px 14.5px;
+  border-color: transparent transparent white transparent;
+}
+
+.front {
+  position: relative;
+  top: 3px;
+  width: 28.5px;
+  height: 20px;
+  margin: 0 auto;
+  background: white;
+}
+/*door*/
+.front:after {
+  position: absolute;
+  background: #3c84cd;
+  width: 11px;
+  height: 13px;
+  bottom: 0;
+  left: 9px;
+}
+
+/*/// About me ////*/
+
+.head {
+  width: 32px;
+  height: 35px;
+  background: white;
+  border-radius: 8px;
+}
+/*mouth*/
+.head:after {
+  width: 4px;
+  height: 10px;
+  background: white;
+  position: absolute;
+  border-radius: 4px 0 0 4px;
+  top: 21px;
+  left: 14px;
+  transform: rotate(270deg);
+}
+
+.eyes {
+  width: 8px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  background: #3c84cd;
+}
+/*right eye*/
+.eyes:after {
+  width: 8px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 14px;
+  background: #3c84cd;
+}
+
+.beard {
+  width: 32px;
+  height: 17px;
+  background: #3c84cd;
+  border: 2px solid white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 8px 8px;
+}
+/*nose*/
+.beard:after {
+  position: absolute;
+  top: -2px;
+  left: 11px;
+  background: white;
+  width: 6px;
+  height: 4px;
+  border-left: 1px solid #3c84cd;
+  border-right: 1px solid #3c84cd;
+}
+
+/*//work//*/
+
+.paper {
+  position: relative;
+  height: 32px;
+  width: 29px;
+  background: white;
+  border: 2px solid white;
+}
+
+/*window*/
+.paper:after {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 25px;
+  height: 29px;
+  background: white;
+  border-top: 4px solid #3c84cd;
+}
+
+.lines {
+  position: absolute;
+  top: 36px;
+  left: 5px;
+  width: 11px;
+  box-shadow: 0 0 0 1px #3c84cd;
+}
+
+.lines:after {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 14px;
+  box-shadow: 0 0 0 1px #3c84cd;
+}
+
+.lines:nth-child(2) {
+  position: absolute;
+  top: 44px;
+  left: 8px;
+  width: 11px;
+}
+
+.lines:nth-child(2):after {
+  position: absolute;
+  top: 4px;
+  left: -3px;
+  width: 11px;
+}
+
+.lines:nth-child(3) {
+  position: absolute;
+  top: 52px;
+  left: 8px;
+  width: 14px;
+}
+
+.lines:nth-child(3):after {
+  display: none;
+}
+
+/*//mail //*/
+
+.mail-base {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  background: white;
+}
+
+.mail-top {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform: rotate(180deg);
+  border-style: solid;
+  border-width: 0 16px 11px 16px;
+  border-color: transparent transparent #3c84cd transparent;
+}
+
+.mail-top:after {
+  position: absolute;
+  z-index: 20;
+  left: -16px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 16px 9px 16px;
+  border-color: transparent transparent white transparent;
+}
+
+.settings-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.gear {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #3c84cd;
+}
+
+.gear-spoke {
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  width: 8px;
+  height: 2px;
+  background: #3c84cd;
+  transform-origin: center;
 }
 
-.card .content a:hover {
-  background: #fff;
-  color: #000;
+/* Rotations for gear spokes */
+.gear-spoke:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.gear-spoke:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(120deg);
+}
+.gear-spoke:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(240deg);
 }
 
-
-
+/* Center of the gear */
+.gear-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #3c84cd;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
