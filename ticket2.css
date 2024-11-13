@@ -168,10 +168,16 @@ body {
   border-radius: 5px;
   text-decoration: none;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  margin-top: 30px;
-  
+  position: absolute;
+  bottom: 20px; /* Coloca el enlace 20px arriba del fondo de la tarjeta */
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 .card .content a:hover {
   background: #fff;
   color: #000;
 }
+
+
+
