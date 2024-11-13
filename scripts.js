@@ -1,10 +1,4 @@
-// Example JavaScript for interactivity (e.g., Hide Menu button)
-document.querySelector('.hide-menu').addEventListener('click', function() {
-    document.querySelector('.sidebar').classList.toggle('hidden');
-});
-
-// Toggle sidebar visibility
-document.querySelector('.hide-menu').addEventListener('click', () => {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.style.display = sidebar.style.display === 'none' ? 'block' : 'none';
-});
+$(window).on("load resize ", function() {
+    var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+    $('.tbl-header').css({'padding-right':scrollWidth});
+  }).resize();

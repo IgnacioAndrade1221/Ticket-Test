@@ -2,6 +2,9 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Ubuntu, sans-serif;
 }
 
 :after {
@@ -20,15 +23,15 @@ h1 {
   text-transform: uppercase;
   text-shadow: 1px 1px 0px #3c84cd, 2px 2px 0px #3c84cd, 3px 3px 0px #3c84cd,
     4px 4px 0px #3c84cd;
+  word-wrap: break-word;  /* Evitar el desbordamiento */
 }
-
 h2 {
   font-size: 24px;
 }
 
 body {
   padding: 100px 0;
-  background: rgb(255, 255, 255);
+  background: #9cd5e9;;
   color: white;
   max-width: 640px;
   font-family: "Montserrat", sans-serif;
@@ -55,11 +58,12 @@ nav ul {
 nav ul li {
   position: relative;
   width: 70px;
-  height: 88px; 
+  height: 88px;
   cursor: pointer;
   background: #3c84cd;
   text-transform: uppercase;
   transition: all 0.4s ease-out;
+  padding: 10px 0;  /* Añadir relleno para que los íconos sean más fáciles de clicar */
 }
 nav ul li:after {
   position: absolute;
@@ -371,3 +375,79 @@ nav ul li div {
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
+
+/*Table*/
+/* Estilos de la tabla */
+/* Mejora en la tabla */
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.1); /* Transparencia */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+  border-radius: 8px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  color: white;
+  word-wrap: break-word; /* Para evitar que el contenido largo se salga de la celda */
+}
+
+th {
+  background-color: rgba(60, 132, 205, 0.2); /* Añadir un fondo tenue en las cabeceras */
+  font-weight: bold;
+}
+
+td {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+tr:hover {
+  background-color: rgba(60, 132, 205, 0.2); /* Fondo en hover */
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 32px; /* Ajuste de tamaño en móviles */
+  }
+  h2 {
+    font-size: 18px; /* Ajuste de tamaño en móviles */
+  }
+  nav ul li{
+    width: 60px;
+    height: 75px;
+  }
+  th, td {
+    padding: 8px;
+    font-size: 12px;
+  }
+  table {
+    font-size: 12px;
+  }
+}
+@media (max-width: 640px) {
+  body {
+    padding: 20px;  /* Reducir padding en dispositivos pequeños */
+  }
+
+  section {
+    left: 20px;  /* Ajuste en la sección para que no se quede muy alejada */
+  }
+
+  nav ul li {
+    width: 50px;  /* Reducción del tamaño de los elementos del menú */
+  }
+
+  h1 {
+    font-size: 30px;  /* Tamaño de fuente más pequeño en móviles */
+  }
+}
+
